@@ -50,7 +50,7 @@
 	</div>
 	 <!-- formular inscriere -->
 	<div class="col-sm-1.5">
-	<a role="button" class="btn btn-info btn-block" href="inscriere.php">Registration</a>
+	<a role="button" class="btn btn-info btn-block" href="registration.php">Registration</a>
 	</div>
   <!-- formular inscriere -->
 	<div class="col-sm-1.5">
