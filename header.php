@@ -32,7 +32,7 @@
     <form method = "post"> 
     <div class="form-row">
     <div class="col-sm-2">
-    <input type="text" class="form-control" id="username" name="username" placeholder="username">
+    <input type="text" class="form-control" id="user" name="user" placeholder="user">
     </div>
     <div class="col-sm-2">
     <input type="password" class="form-control" id="password" name="password" placeholder="password"> 
