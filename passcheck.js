@@ -1,4 +1,3 @@
-//Adaugare EventListener la incarcarea paginii verificarea valorii judetului
 window.addEventListener("load", start, false);
 
 function start(){
@@ -16,8 +15,3 @@ else {
 	document.getElementById("message").innerHTML = 'Not Matching';
 }
 }
-
-/* document.getElementById('submit').onclick = function() {
-   if(document.getElementById("parola").value != document.getElementById("parola2").value)
-	   
-}​;​*/

@@ -17,7 +17,7 @@ if (isset($_POST['email']))
 if (isset($_POST['password']))
     $password = $_POST['password'];
 if (isset($_POST['password2']))
-    $parola2 = $_POST['password2'];
+    $password2 = $_POST['password2'];
 if (isset($_POST['user']))
     $user = fix_string($_POST['user']);
 
@@ -64,18 +64,18 @@ function validate_lastName($field) {
 <?php
 function validate_plant($field) {
  if ($field == "")
- return "No lastName was entered<br />";
+ return "No plant was entered<br />";
  return ""; }
 ?>
 
 <?php
 function validate_user($field) {
  if ($field == "")
- return "No Username was entered<br />";
+ return "No User was entered<br />";
  else if (strlen($field) < 5)
- return "Usernames must be at least 5 characters<br/>";
+ return "User must be at least 5 characters<br/>";
  else if (preg_match("/[^a-zA-Z0-9_-]/", $field))
- return "Only letters, numbers, - and _ in usernames";
+ return "Only letters, numbers, - and _ in user";
 
 $fieldTemp = "'" . $field . "'";
 
@@ -83,7 +83,7 @@ include "db_connect.php";
 $sql = "SELECT * FROM person WHERE user = $fieldTemp";
 $result = $connection->query($sql);	
 if($result->num_rows > 0) 
-return "Username already exists";
+return "User already exists";
  
 return "";
 }
@@ -114,7 +114,7 @@ preg_match("/[^a-zA-Z0-9.@_-]/", $field))
  $fieldTemp = "'" . $field . "'";
 
 include "db_connect.php";
-$sql = "SELECT * FROM utilizatori WHERE email = $fieldTemp";
+$sql = "SELECT * FROM person WHERE email = $fieldTemp";
 $result = $connection->query($sql);	
 if($result->num_rows > 0) 
 return "Email already exists";

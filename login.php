@@ -39,6 +39,12 @@ if (isset($_POST["login"]) ) {
 			echo "Connected successfully!"."<br><br>";
 		}	
 	}
+	if(!isset($_SESSION["user"]))
+    //Daca nu suntem logati redirectioneaza catre index.php
+    header("Location: index2.php");
+
 }
+
+
 
 ?>

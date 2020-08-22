@@ -28,27 +28,12 @@
     <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="index.php">Calibration Page</a>
     
-    <!--formular login-->
-    <form method = "post"> 
-    <div class="form-row">
-    <div class="col-sm-2">
-    <input type="text" class="form-control" id="user" name="user" placeholder="user">
-    </div>
-    <div class="col-sm-2">
-    <input type="password" class="form-control" id="password" name="password" placeholder="password"> 
-    </div>  
-	
+    	
 	<div class="col-sm-0.5">
 	</div>
 	<div class="col-sm-1.5">
-	<button type="submit" class="btn btn-info btn-block" name = "login">Login</button>
-    </div>
-	<div class="col-sm-1.5">
 	<button type="submit" class="btn btn-info btn-block" name = "logout">Logout</button>
     </div>
-	<div class="col-sm-1.5">
-	<a role="button" class="btn btn-info btn-block" href="registration.php">Registration</a>
-	</div>
 	<div class="col-sm-1.5">
 	<a role="button" class="btn btn-info btn-block" href="password.php">PassWord</a>
 	</div>

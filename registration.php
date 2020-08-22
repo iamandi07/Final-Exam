@@ -1,6 +1,5 @@
 <?php include "header.php"; ?>
 <?php include "login.php"; ?>
-<?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
 <?php include "verification.php"; ?>
 
@@ -10,28 +9,31 @@
 <p>
     <div class="form-row col-sm-6">
 	<div class="col">
-    <input type="text" class="form-control" id="salutation" name="salutation " placeholder="<?php echo 'Salutation: ' . $salutation;?>" value="<?php echo $salutation;?>" required> 
+    <select id="salutation" name="salutation"  placeholder="<?php echo 'Salutation: ' . $salutation;?>" value="<?php echo $salutation;?>"  required>
+		<option value=""></option>
+		<option value="MR.">Mr.</option>
+		<option value="MRS.">Mrs.</option>
+	</select>
     </div>
     <div class="col">
-    <input type="text" class="form-control" id="firstName" name="firstName " placeholder="<?php echo 'FirstName: ' . $firstName;?>" value="<?php echo $firstName;?>" required> 
-    </div>
-    <div class="col">
-    <input type="text" class="form-control" id="lastName" name="lastName " placeholder="<?php echo 'LastName: ' . $lastName;?>" value="<?php echo $lastName;?>"  required>
-    </div>
-    <div class="col">
-    <input type="text" class="form-control" id="plant" name="plant "  placeholder="<?php echo 'Plant: ' . $plant;?>" value="<?php echo $plant;?>" required>
+    <input type="text" class="form-control" id="firstName" name="firstName"  placeholder="<?php echo 'FirstName: ' . $firstName;?>" value="<?php echo $firstName;?>"  required> 
     </div>
 	<div class="col">
-    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber "  placeholder="<?php echo 'PhoneNumber: ' . $phoneNumber;?>" value="<?php echo $phoneNumber;?>" required>
+    <input type="text" class="form-control" id="lastName" name="lastName"  placeholder="<?php echo 'LastName: ' . $lastName;?>" value="<?php echo $lastName;?>" required>
+    </div>
+    <div class="col">
+    <input type="text" class="form-control" id="plant" name="plant"  placeholder="<?php echo 'Plant: ' . $plant;?>" value="<?php echo $plant;?>"  required>
     </div>
 	<div class="col">
-    <input type="email" class="form-control" id="email" name="email "  placeholder="<?php echo 'Email: ' . $email;?>" value="<?php echo $email;?>" required>
+    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"  placeholder="<?php echo 'PhoneNumber: ' . $phoneNumber;?>" value="<?php echo $phoneNumber;?>"  required>
+    </div>
+	<div class="col">
+    <input type="text" class="form-control" id="email" name="email"  placeholder="<?php echo 'Email: ' . $user;?>" value="<?php echo $email;?>"  required>
     </div>
     </div>
 </p>
 
 <p>
-	<script src="passcheck.js"></script>
     <div class="form-row col-sm-6">
     <div class="col">
     <input type="text" class="form-control" id="user" name="user"  placeholder="<?php echo 'User: ' . $user;?>" value="<?php echo $user;?>"  required>
@@ -41,10 +43,6 @@
     </div>
     <div class="col">
     <input type="password" class="form-control" id="password2" name="password2"  placeholder="<?php echo 'Password2: ' . $password2;?>" value="<?php echo $password2;?>" required>
-	 
-	 <!--Checking pass match client-side-->
-	 <div id="chkForm1"></div>
-	 <span id='message'></span>
     </div>
     </div>
 </p>
