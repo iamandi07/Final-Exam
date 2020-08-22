@@ -1,10 +1,11 @@
 <?php include "header.php"; ?>
-<<?php include "login.php"; ?>
+<?php include "login.php"; ?>
 <?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
+<?php include "verification.php"; ?>
 
 <!--Formulare de inscriere-->
-<form method="post" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
 
 <p>
     <div class="form-row col-sm-6">
@@ -12,19 +13,19 @@
     <input type="text" class="form-control" id="salutation" name="salutation " placeholder="<?php echo 'Salutation: ' . $salutation;?>" value="<?php echo $salutation;?>" required> 
     </div>
     <div class="col">
-    <input type="text" class="form-control" id="name" name="name " placeholder="<?php echo 'Name: ' . $name;?>" value="<?php echo $name;?>" required> 
+    <input type="text" class="form-control" id="firstName" name="firstName " placeholder="<?php echo 'FirstName: ' . $firstName;?>" value="<?php echo $firstName;?>" required> 
     </div>
     <div class="col">
-    <input type="text" class="form-control" id="firstName" name="firstName " placeholder="<?php echo 'FirstName: ' . $firstName;?>" value="<?php echo $firstName;?>"  required>
+    <input type="text" class="form-control" id="lastName" name="lastName " placeholder="<?php echo 'LastName: ' . $lastName;?>" value="<?php echo $lastName;?>"  required>
     </div>
     <div class="col">
-    <input type="text" class="form-control" id="plant" name="plant "  placeholder="<?php echo 'Plant : ' . $plant;?>" value="<?php echo $plant;?>" required>
+    <input type="text" class="form-control" id="plant" name="plant "  placeholder="<?php echo 'Plant: ' . $plant;?>" value="<?php echo $plant;?>" required>
     </div>
 	<div class="col">
-    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber "  placeholder="<?php echo 'PhoneNumber : ' . $phoneNumber;?>" value="<?php echo $phoneNumber;?>" required>
+    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber "  placeholder="<?php echo 'PhoneNumber: ' . $phoneNumber;?>" value="<?php echo $phoneNumber;?>" required>
     </div>
 	<div class="col">
-    <input type="email" class="form-control" id="email" name="email "  placeholder="<?php echo 'Email : ' . $email;?>" value="<?php echo $email;?>" required>
+    <input type="email" class="form-control" id="email" name="email "  placeholder="<?php echo 'Email: ' . $email;?>" value="<?php echo $email;?>" required>
     </div>
     </div>
 </p>
@@ -50,7 +51,7 @@
 
 <div class="form-row col-sm-6">
     <div class="col">
-    <button type="submit" name="submit" id="submit" class="btn btn-primary">Adauga</button>
+    <button type="submit" name="submit" id="submit" class="btn btn-primary">Add</button>
     </div>
     </div>
 
@@ -71,23 +72,21 @@ if (isset($_POST['submit'])) {
     }
 
 //Preventing SQL Injections & XSS Injections
-$userFinal = "'".htmlentities($_POST["user"],ENT_HTML5,'UTF-8',TRUE)."'";
-$passwordFinal = "'".md5(htmlentities($_POST["password"],ENT_HTML5,'UTF-8',TRUE))."'";
-$name = "'".htmlentities($_POST["name"],ENT_HTML5,'UTF-8',TRUE)."'";
-$prenume = "'".htmlentities($_POST["prenume"],ENT_HTML5,'UTF-8',TRUE)."'";
+$salutation = "'".htmlentities($_POST["salutation"],ENT_HTML5,'UTF-8',TRUE)."'";
+$firstName = "'".htmlentities($_POST["firstName"],ENT_HTML5,'UTF-8',TRUE)."'";
+$lastName = "'".htmlentities($_POST["lastName"],ENT_HTML5,'UTF-8',TRUE)."'";
+$plant = "'".htmlentities($_POST["plant"],ENT_HTML5,'UTF-8',TRUE)."'";
+$phoneNumber = "'".htmlentities($_POST["phoneNumber"],ENT_HTML5,'UTF-8',TRUE)."'";
 $email = "'".htmlentities($_POST["email"],ENT_HTML5,'UTF-8',TRUE)."'";
-$sex = $starecivila = '';
-$fileExtFinal = "'".$fileExt."'";
+$passwordFinal = "'".md5(htmlentities($_POST["password"],ENT_HTML5,'UTF-8',TRUE))."'";
+$userFinal = "'".htmlentities($_POST["user"],ENT_HTML5,'UTF-8',TRUE)."'";
 
-if(empty($_POST["necasatorit"]) && empty($_POST["casatorit"])) {$starecivila = "'"."Nespecificat"."'";}
-else if (!empty($_POST["casatorit"])) {$starecivila = "'"."Casatorit(a)"."'";}
-else {$starecivila = "'"."Necasatorit(a)"."'";}
 
-if(!isset($_POST["barbat"]) && !isset($_POST["barbat"])) {$sex = "'".'Nespecificat'."'"; }
-else if (isset($_POST["barbat"])) {$sex = "'".'Barbat'."'"; }else {$sex = "'".'Femeie'."'"; }
 
-$sql = "INSERT INTO utilizatori (usernume,parola,nume,prenume,email,dataregistrare,starecivila,sex,extensie)
-        VALUES ($userFinal,$passwordFinal,$nume,$prenume,$email,SYSDATE(),$starecivila,$sex,$fileExtFinal)";
+
+
+$sql = "INSERT INTO person (salutation,firstName,lastName,plant,phoneNumber,email,password,user)
+        VALUES ($salutation,$firstName,$lastName,$plant,$phoneNumber,$email,$passwordFinal,$userFinal)";
 
 if(mysqli_query($connection,$sql)) {
     echo "Added!";

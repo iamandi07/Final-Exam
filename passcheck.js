@@ -1,7 +1,6 @@
 //Adaugare EventListener la incarcarea paginii verificarea valorii judetului
 window.addEventListener("load", start, false);
 
-//Adaugare EventListener la fiecare selectie de judet
 function start(){
 document.getElementById('password2').addEventListener('input',verEgalitate,false);
 document.getElementById('password').addEventListener('input',verEgalitate,false);
