@@ -4,6 +4,7 @@ if(!isset($_SESSION["user"]))
 session_start();
 
 include "db_connect.php";
+include "verification.php";
 
 if (isset($_POST["login"]) ) {	
 

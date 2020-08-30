@@ -11,14 +11,6 @@
 <body>
 <?php
 
-	if(!isset($_SESSION["user"])){
-    echo '<div class="bg">
-	
-		<h3 class="bg1"> Hello, Welcome to the equipment database. If you want to review the equipment list, please register or login</h3>
-	
-	</div>';
-	
-	}
 	
 	if(isset($_SESSION["user"])) {
 	
@@ -55,6 +47,14 @@
 					else echo "0 results";
 			
 }
+	else {
+    echo '<div class="bg">
+	
+		<h3 class="bg1"> Hello, Welcome to the equipment database. If you want to review the equipment list, please register or login</h3>
+	
+	</div>';
+	
+	}
 ?>
 
 </body>
