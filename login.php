@@ -7,10 +7,9 @@ include "db_connect.php";
 
 if (isset($_POST["login"]) ) {	
 
-	//Mesaje pentru client la logare
-	if(isset($_SESSION["user"]))
-		die ("Already logged in!");
 
+	if(isset($_SESSION["user"]))
+    
 	//Avoiding SQL injections by using "'" and sanitising variables
 	$userFinal = "'".htmlentities($_POST["user"],ENT_HTML5,'UTF-8',TRUE)."'";
 	$passwordFinal =  "'".md5(htmlentities($_POST["password"],ENT_HTML5,'UTF-8',TRUE))."'";
@@ -37,11 +36,9 @@ if (isset($_POST["login"]) ) {
 			$_SESSION["user"] = $userFinal;
 			$_SESSION["password"] = $passwordFinal;
 			echo "Connected successfully!"."<br><br>";
+			header("Location: index.php");
 		}	
 	}
-	if(!isset($_SESSION["user"]))
-    //Daca nu suntem logati redirectioneaza catre index.php
-    header("Location: index2.php");
 
 }
 

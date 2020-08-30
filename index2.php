@@ -1,7 +1,6 @@
 <?php include "header2.php"; ?>
 <?php include "db_connect.php"; ?>
 <?php include "logout.php"; ?>
-<?php include "password.php"; ?>
 
 <?php
 if(isset($_SESSION["user"])) {

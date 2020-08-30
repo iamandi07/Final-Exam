@@ -5,9 +5,10 @@ if (isset($_POST["logout"]) ) {
 		}
 		else {
 		session_destroy();
-		header("Location: index.php");
-		// echo "Logout reusit!";
+		}
+		echo "Logout reusit!";
     	exit;
+		
 		}
 }
 ?>

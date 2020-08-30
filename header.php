@@ -44,9 +44,6 @@
 	<button type="submit" class="btn btn-info btn-block" name = "login">Login</button>
     </div>
 	<div class="col-sm-1.5">
-	<button type="submit" class="btn btn-info btn-block" name = "logout">Logout</button>
-    </div>
-	<div class="col-sm-1.5">
 	<a role="button" class="btn btn-info btn-block" href="registration.php">Registration</a>
 	</div>
 	<div class="col-sm-1.5">
