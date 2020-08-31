@@ -28,7 +28,7 @@
     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"  placeholder="<?php echo 'PhoneNumber: ' . $phoneNumber;?>" value="<?php echo $phoneNumber;?>"  required>
     </div>
 	<div class="col">
-    <input type="text" class="form-control" id="email" name="email"  placeholder="<?php echo 'Email: ' . $user;?>" value="<?php echo $email;?>"  required>
+    <input type="text" class="form-control" id="email" name="email"  placeholder="<?php echo 'Email: ' . $email;?>" value="<?php echo $email;?>"  required>
     </div>
     </div>
 </p>

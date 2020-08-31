@@ -4,10 +4,12 @@ if(!isset($_SESSION["user"]))
 session_start();
 
 include "db_connect.php";
-include "verification.php";
 
 if (isset($_POST["login"]) ) {	
 
+	//Mesaje pentru client la logare
+	if(isset($_SESSION["user"]))
+		die ("Already logged in!");
 
 	if(isset($_SESSION["user"]))
     
@@ -37,7 +39,6 @@ if (isset($_POST["login"]) ) {
 			$_SESSION["user"] = $userFinal;
 			$_SESSION["password"] = $passwordFinal;
 			echo "Connected successfully!"."<br><br>";
-			header("Location: index.php");
 		}	
 	}
 
