@@ -85,7 +85,7 @@ $userFinal = "'".htmlentities($_POST["user"],ENT_HTML5,'UTF-8',TRUE)."'";
 
 $sql = "INSERT INTO person (salutation,firstName,lastName,plant,phoneNumber,email,password,user)
         VALUES ($salutation,$firstName,$lastName,$plant,$phoneNumber,$email,$passwordFinal,$userFinal)";
-
+echo $sql;
 if(mysqli_query($connection,$sql)) {
     echo "Added!";
 }

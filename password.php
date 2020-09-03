@@ -1,5 +1,5 @@
-<?php include "header.php"; ?>
-<?php include "login.php"; ?>
+<?php include "header2.php"; ?>
+<?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
 
 <?php
@@ -14,21 +14,21 @@ if(!isset($_SESSION["user"]))
     <p>
     <div class="form-row col-sm-4">
     Parola curenta:<div class="col">
-    <input type="text" class="form-control" id="password" name="password" placeholder="<?php echo $password;?>" value="<?php echo $password;?>" required> 
+    <input type="text" class="form-control" id="password" name="password" placeholder="" value="" required> 
     </div></div>
     </p>
 
     <p>
     <div class="form-row col-sm-4">
     Parola noua:<div class="col">
-    <input type="password" class="form-control" id="password2" name="password2" placeholder="<?php echo $password2;?>" value="<?php echo $password2;?>">
+    <input type="password" class="form-control" id="password2" name="password2" placeholder="" value="<?php echo $password2;?>">
     </div></div>
     </p>
 
     <p>
     <div class="form-row col-sm-4">
     Parola noua:<div class="col">
-    <input type="password" class="form-control" id="password3" name="password3"  placeholder="<?php echo $password3;?>" value="<?php echo $password3;?>">
+    <input type="password" class="form-control" id="password3" name="password3"  placeholder="" value="<?php echo $password3;?>">
     </div></div>
     </p>
 

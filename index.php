@@ -1,23 +1,21 @@
-<?php include "header.php"; ?>
+<?php session_start(); ?>
+<link rel="stylesheet" type="text/css" href="css/background.css">
+<?php 
+if(isset($_SESSION['user'])) 
+	include "header2.php"; 
+	else include "header.php"; 
+?>
 <?php include "login.php"; ?>
+<?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
 
-<head>
 
-<link rel="stylesheet" type="text/css" href="css/background.css">
 
-</head
 
-<body>
 <?php
-
-	
-	if(isset($_SESSION["user"])) {
-	
-
-	$sql = "SELECT * FROM person";
-		
-	$result = $connection->query($sql);
+	if(isset($_SESSION['user'])) {
+		$sql = "SELECT * FROM person";
+		$result = $connection->query($sql);
 					if($result->num_rows > 0) {
 					echo "Registrated persons list:
 					<br><br>
@@ -33,7 +31,6 @@
 					<tr>";	
 					while($row = $result->fetch_assoc()) {
 						echo "<tr>";
-						
 						echo "<td>" . $row["salutation"] . "</td>";
 						echo "<td>" . $row["firstName"] . "</td>";
 						echo "<td>" . $row["lastName"] . "</td>";
@@ -41,7 +38,7 @@
 						echo "<td>" . $row["phoneNumber"] . "</td>";
 						echo "<td>" . $row["email"] . "</td>";
 						}
-					header("Location: header2.php");
+					
 				echo "</table>";
 			}
 					else echo "0 results";

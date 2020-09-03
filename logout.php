@@ -1,14 +1,9 @@
 <?php
-if (isset($_POST["logout"]) ) {
-		if(!isset($_SESSION["user"])) {
-			echo "Try and login first!";
-		}
-		else {
+
+if (isset($_POST["logout"]) ) 
+		{
 		session_destroy();
+    	echo "<meta http-equiv='refresh' content='0;URL=index.php'>";
 		}
-		echo "Logout reusit!";
-    	exit;
-		
-		}
-}
+
 ?>
