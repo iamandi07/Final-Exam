@@ -41,6 +41,9 @@
 	<a role="button" class="btn btn-info btn-block" href="costcenter.php">CostCenter</a>
 	</div>
 	<div class="col-sm-1.5">
+	<a role="button" class="btn btn-info btn-block" href="equipment.php">Equipment</a>
+	</div>
+	<div class="col-sm-1.5">
 	<a role="button" class="btn btn-info btn-block" href="password.php">PassWord</a>
 	</div>
 	</div>
