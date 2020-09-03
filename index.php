@@ -42,8 +42,33 @@ if(isset($_SESSION['user']))
 				echo "</table>";
 			}
 					else echo "0 results";
-			
-}
+				echo "<br><br><br>";
+			$sql2 = "SELECT * FROM costcenter1";
+			$result = $connection->query($sql2);
+					if($result->num_rows > 0) {
+					echo "Registrated costcenters list:
+					<br><br>
+					<table class=\"table\">
+					<tr>
+					<th>Plant</th>
+					<th>CostCenterManagerId</th>
+    				<th>EquipmentResponsibleId</th>
+					<th>ForemanId</th>
+					</tr>
+					<tr>";	
+					while($row = $result->fetch_assoc()) {
+						echo "<tr>";
+						echo "<td>" . $row["plant"] . "</td>";
+						echo "<td>" . $row["costCenterManagerId"] . "</td>";
+						echo "<td>" . $row["equipmentResponsibleId"] . "</td>";
+						echo "<td>" . $row["foremanId"] . "</td>";
+						}
+					
+				echo "</table>";
+			}
+					else echo "0 results";
+	}
+	
 	else {
     echo '<div class="bg">
 	
