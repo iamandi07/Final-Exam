@@ -43,6 +43,7 @@ if(isset($_SESSION['user']))
 			}
 					else echo "0 results";
 				echo "<br><br><br>";
+				
 			$sql2 = "SELECT * FROM costcenter1";
 			$result = $connection->query($sql2);
 					if($result->num_rows > 0) {
@@ -62,6 +63,39 @@ if(isset($_SESSION['user']))
 						echo "<td>" . $row["costCenterManagerId"] . "</td>";
 						echo "<td>" . $row["equipmentResponsibleId"] . "</td>";
 						echo "<td>" . $row["foremanId"] . "</td>";
+						}
+					
+				echo "</table>";
+			}
+					else echo "0 results";
+			
+			$sql3 = "SELECT * FROM equipment";
+			$result = $connection->query($sql3);
+					if($result->num_rows > 0) {
+					echo "Registrated equipments list:
+					<br><br>
+					<table class=\"table\">
+					<tr>
+					<th>Type</th>
+					<th>Owner</th>
+    				<th>Location</th>
+					<th>Model</th>
+					<th>SerialNumber</th>
+					<th>CalibrationDate</th>
+    				<th>LastCalibration</th>
+					<th>InspectionPlan</th>
+					</tr>
+					<tr>";	
+					while($row = $result->fetch_assoc()) {
+						echo "<tr>";
+						echo "<td>" . $row["type"] . "</td>";
+						echo "<td>" . $row["owner"] . "</td>";
+						echo "<td>" . $row["location"] . "</td>";
+						echo "<td>" . $row["model"] . "</td>";
+						echo "<td>" . $row["serialNumber"] . "</td>";
+						echo "<td>" . $row["calibrationDate"] . "</td>";
+						echo "<td>" . $row["lastCalibration"] . "</td>";
+						echo "<td>" . $row["inspectionPlan"] . "</td>";
 						}
 					
 				echo "</table>";

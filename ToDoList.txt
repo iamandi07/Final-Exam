@@ -1,5 +1,5 @@
 - header password kiszedni ok
-- kovetkezo ket tablazat
+- kovetkezo ket tablazat ok
 - password - ellenorizni ha a beadott jelszo megegyezik a $_SESSION['password']-al.
 
 
