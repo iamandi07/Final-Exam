@@ -33,8 +33,6 @@ function fix_string($string) {
 function validate_plant($field) {
  if ($field == "")
  return "No plant was entered<br />";
- else if(strlen($field) < 4)
- return "Plant must be at least 4 characters<br/>";
  return ""; }
 
 
