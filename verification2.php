@@ -31,10 +31,10 @@ function fix_string($string) {
 
 
 function validate_plant($field) {
- if ($field == "")
- return "No plant was entered<br />";
-else if(strlen($field) < 4);
- return "Plant must be at least 4 characters<br/>";
+ if ($field == ""){
+ return "No plant was entered<br />"; }
+	else if(strlen($field) < 4);{
+	return "Plant must be at least 4 characters<br/>"; }
  return ""; }
 
 
@@ -55,7 +55,7 @@ return "";
 
 function validate_equipmentResponsibleId($field) {
  if ($field == "")
- return "No costCenterManagerId was entered<br />";
+ return "No EquipmentresponsibleId was entered<br />";
 
 $fieldTemp = "'" . $field . "'";
  
@@ -70,7 +70,7 @@ return "";
 
 function validate_foremanId($field) {
  if ($field == "")
- return "No costCenterManagerId was entered<br />";
+ return "No ForemanId was entered<br />";
 
 $fieldTemp = "'" . $field . "'";
  
