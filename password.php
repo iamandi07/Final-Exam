@@ -1,6 +1,7 @@
 <?php include "header2.php"; ?>
 <?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
+<?php include "passwordverification.php" ?>
 
 <?php
 if(!isset($_SESSION["user"]))

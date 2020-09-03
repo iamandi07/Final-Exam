@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include "header2.php"; ?>
 <?php include "logout.php"; ?>
 <?php include "db_connect.php"; ?>
