@@ -114,7 +114,3 @@ if(isset($_SESSION['user']))
 ?>
 
 </body>
-
-
-
-<?php include "footer.php"; ?>
